@@ -1,57 +1,32 @@
-## How to use this template
+# `@reason-react-native/svg`
 
-- ⚠️ **Don't fork this repository.** Use the "Use this template" green GitHub
-  button.
-- Put your bindings in `src/ReactNativeSomething` & rename accordingly or use
-  `bsconfig.json` `"namespace"` field (more on this below),
-- Update all occurences of
-
-  - `@reason-react-native/__template__`
-  - `https://github.com/reason-react-native/__template__`
-  - `__template__`
-  - `@react-native-community/something`
-  - `https://github.com/react-native-community/something`
-  - `ReactNativeSomething`. If you have more than a file exposed, you should
-    consider using BuckleScript custom namespace by adjusting `bsconfig.json`
-    and adding a `"namespace": "react-native-something"` (note that it will be
-    converted to `ReactNativeSomething`)
-
-- Add your `@react-native-community/something` (adjusted) in `peerDependencies`
-  & `devDependencies` section
-- Adjust the changelog (and/or clean it)
-- Remove this part ⬆ & keep everything below ⬇
-
----
-
-# `@reason-react-native/__template__`
-
-[![Build Status](https://github.com/reason-react-native/__template__/workflows/Build/badge.svg)](https://github.com/reason-react-native/__template__/actions)
-[![Version](https://img.shields.io/npm/v/@reason-react-native/__template__.svg)](https://www.npmjs.com/@reason-react-native/__template__)
+[![Build Status](https://github.com/reason-react-native/svg/workflows/Build/badge.svg)](https://github.com/reason-react-native/svg/actions)
+[![Version](https://img.shields.io/npm/v/@reason-react-native/svg.svg)](https://www.npmjs.com/@reason-react-native/svg)
 [![Chat](https://img.shields.io/discord/235176658175262720.svg?logo=discord&colorb=blue)](https://reason-react-native.github.io/discord/)
 
 [ReasonML](https://reasonml.github.io) /
 [BuckleScript](https://bucklescript.github.io) bindings for
-[`@react-native-community/something`](https://github.com/react-native-community/something).
+[`react-native-svg`](https://github.com/react-native-community/react-native-svg).
 
-Exposed as `ReactNativeSomething` module.
+Exposed as `ReactNativeSvg` module.
 
-`@reason-react-native/__template__` X.y._ means it's compatible with
-`@react-native-community/something` X.y._
+`@reason-react-native/svg` X.y._ means it's compatible with `react-native-svg`
+X.y._
 
 ## Installation
 
 When
-[`@react-native-community/something`](https://github.com/react-native-community/something)
+[`react-native-svg`](https://github.com/react-native-community/react-native-svg)
 is properly installed & configured by following their installation instructions,
 you can install the bindings:
 
 ```console
-npm install @reason-react-native/__template__
+npm install @reason-react-native/svg
 # or
-yarn add @reason-react-native/__template__
+yarn add @reason-react-native/svg
 ```
 
-`@reason-react-native/__template__` should be added to `bs-dependencies` in your
+`@reason-react-native/svg` should be added to `bs-dependencies` in your
 `bsconfig.json`. Something like
 
 ```diff
@@ -61,7 +36,7 @@ yarn add @reason-react-native/__template__
     "reason-react",
     "reason-react-native",
     // ...
-+    "@reason-react-native/__template__"
++    "@reason-react-native/svg"
   ],
   //...
 }
@@ -71,13 +46,13 @@ yarn add @reason-react-native/__template__
 
 ### Types
 
-#### `ReactNativeSomething.t`
+#### `ReactNativeSvg.t`
 
 ...
 
 ### Methods
 
-#### `ReactNativeSomething.method`
+#### `ReactNativeSvg.method`
 
 ...
 

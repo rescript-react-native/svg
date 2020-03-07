@@ -1,17 +1,5 @@
-# Changelog of `@reason-react-native/__template__`
+# Changelog of `@reason-react-native/svg`
 
-## X.Y.Z - 20YY-MM-DD
+## 12.0.0 - 2020-03-06
 
-Short & concise description
-
-### 💥 Breaking changes
-
-- Something, in [1234567](<link to commit on github>) by @<usename>
-
-### 🐛 Fixes
-
-- Something else, in [1234567](<link to commit on github>) by @<usename>
-
-### Internal changes
-
-(If worth mentioning)
+Initial release

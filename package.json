@@ -1,11 +1,15 @@
 {
-  "name": "@reason-react-native/__template__",
+  "name": "@reason-react-native/svg",
   "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "peerDependencies": {},
-  "repository": "https://github.com/reason-react-native/__template__.git",
+  "peerDependencies": {
+    "react-native-svg": "^12.0.0",
+    "reason-react": "^0.7.0",
+    "reason-react-native": "^0.61.0"
+  },
+  "repository": "https://github.com/reason-react-native/svg.git",
   "license": "MIT",
   "keywords": [
     "reason",
@@ -35,11 +39,13 @@
     "release": "npmpub"
   },
   "devDependencies": {
-    "bs-platform": "^7.0.1",
+    "bs-platform": "^7.2.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "npmpub": "^5.0.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "reason-react": "^0.7.0",
+    "reason-react-native": "^0.61.0"
   },
   "prettier": {
     "trailingComma": "all",
