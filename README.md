@@ -44,17 +44,36 @@ yarn add @reason-react-native/svg
 
 ## Usage
 
-### Types
+Supported :
 
-#### `ReactNativeSvg.t`
+- SvgXml
+- SvgCss
+- Svg
+- Rect
+- Circle
+- Ellipse
+- Line
+- Polygon
+- Polyline
+- Path
+- Text
+- TextPath
+- Tspan
+- Use
+- G
+- Symbol
+- Defs
+- Image
+- ClipPath
+- LinearGradient
+- Stop
+- RadialGradient
+- Mask
+- Pattern
+- Marker
+- ForeignObject
 
-...
-
-### Methods
-
-#### `ReactNativeSvg.method`
-
-...
+See [definition](.src/ReactNativeSvg.re) for more details.
 
 ---
 

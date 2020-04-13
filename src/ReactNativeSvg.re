@@ -22,6 +22,14 @@ module SvgCss = {
     "SvgCss";
 };
 
+// @todo?
+// SvgFromXml
+// SvgUri
+// SvgFromUri
+// SvgWithCss
+// SvgCssUri
+// SvgWithCssUri
+
 // https://github.com/react-native-community/react-native-svg#svg
 module Svg = {
   [@react.component] [@bs.module "react-native-svg"]
@@ -37,7 +45,7 @@ module Svg = {
       ~height: size=?,
       ~children: React.element,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -46,8 +54,8 @@ module Svg = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -84,7 +92,7 @@ module Rect = {
       ~opacity: opacity=?,
       ~children: React.element,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -93,8 +101,8 @@ module Rect = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -130,7 +138,7 @@ module Circle = {
       ~opacity: opacity=?,
       ~children: React.element,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -139,8 +147,8 @@ module Circle = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -177,7 +185,7 @@ module Ellipse = {
       ~opacity: opacity=?,
       ~children: React.element,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -186,8 +194,8 @@ module Ellipse = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -224,7 +232,7 @@ module Line = {
       ~opacity: opacity=?,
       ~children: React.element,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -233,8 +241,8 @@ module Line = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -268,7 +276,7 @@ module Polygon = {
       ~opacity: opacity=?,
       ~children: React.element,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -277,8 +285,8 @@ module Polygon = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -312,7 +320,7 @@ module Polyline = {
       ~opacity: opacity=?,
       ~children: React.element,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -321,8 +329,8 @@ module Polyline = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -356,7 +364,7 @@ module Path = {
       ~opacity: opacity=?,
       ~children: React.element,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -365,8 +373,8 @@ module Path = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -479,7 +487,7 @@ module Text = {
       ~fontVariantLigatures: [@bs.string] [ | `normal | `none]=?,
       ~fontVariationSettings: string=?,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -488,8 +496,8 @@ module Text = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -603,7 +611,7 @@ module TextPath = {
       ~fontVariantLigatures: [@bs.string] [ | `normal | `none]=?,
       ~fontVariationSettings: string=?,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -612,8 +620,8 @@ module TextPath = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -699,7 +707,7 @@ module Tspan = {
       ~fontVariantLigatures: [@bs.string] [ | `normal | `none]=?,
       ~fontVariationSettings: string=?,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -708,8 +716,8 @@ module Tspan = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -746,7 +754,7 @@ module Use = {
       ~opacity: opacity=?,
       ~children: React.element,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -755,8 +763,8 @@ module Use = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -789,7 +797,7 @@ module G = {
       ~opacity: opacity=?,
       ~children: React.element,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -798,8 +806,8 @@ module G = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -855,7 +863,7 @@ module Image = {
       ~opacity: opacity=?,
       ~children: React.element,
       // Commons Props
-      ~id: string,
+      ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
       ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
@@ -864,8 +872,8 @@ module Image = {
       ~strokeOpacity: size=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: linecap=?,
-      ~strokeLinejoin: linejoin=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
       ~strokeMiterlimit: size=?,
       ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
       ~clipPath: string=?,
@@ -900,7 +908,7 @@ module LinearGradient = {
   [@react.component] [@bs.module "react-native-svg"]
   external make:
     (
-      ~id: string,
+      ~id: string=?,
       ~x1: size,
       ~x2: size,
       ~y1: size,
@@ -914,10 +922,121 @@ module LinearGradient = {
 module Stop = {
   [@react.component] [@bs.module "react-native-svg"]
   external make:
-    (~offset: size, ~stopColor: color, ~stopOpacity: opacity) => React.element =
+    (~offset: size, ~stopColor: Color.t, ~stopOpacity: opacity) =>
+    React.element =
     "Stop";
 };
 
-// type units = [@bs.string] [ | `userSpaceOnUse | `objectBoundingBox];
-// type linecap = [@bs.string] [ | `butt | `square | `round];
-// type linejoin = [@bs.string] [ | `miter | `bevel | `round];
+module RadialGradient = {
+  [@react.component] [@bs.module "react-native-svg"]
+  external make:
+    (
+      ~id: string=?,
+      ~fx: size=?,
+      ~fy: size=?,
+      ~rx: size=?,
+      ~ry: size=?,
+      ~cx: size=?,
+      ~cy: size=?,
+      ~r: size=?,
+      ~gradientUnits: [@bs.string] [ | `userSpaceOnUse | `objectBoundingBox]=?,
+      ~gradientTransform: (float, float, float, float, float, float)=?
+    ) =>
+    React.element =
+    "RadialGradient";
+};
+
+module Mask = {
+  [@react.component] [@bs.module "react-native-svg"]
+  external make:
+    (
+      ~width: size=?,
+      ~height: size=?,
+      ~maskTransform: (float, float, float, float, float, float)=?,
+      ~maskUnits: [@bs.string] [ | `userSpaceOnUse | `objectBoundingBox]=?,
+      ~maskContentUnits: [@bs.string] [ | `userSpaceOnUse | `objectBoundingBox]
+                           =?,
+      // Commons Props
+      ~id: string=?,
+      ~fill: Color.t=?,
+      ~fillOpacity: opacity=?,
+      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~stroke: Color.t=?,
+      ~strokeWidth: size=?,
+      ~strokeOpacity: size=?,
+      ~strokeDasharray: array(size)=?,
+      ~strokeDashoffset: size=?,
+      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
+      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeMiterlimit: size=?,
+      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipPath: string=?,
+      ~transform: string=?,
+      ~vectorEffect: [@bs.string] [
+                       | `none
+                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
+                       | `nonScalingStroke
+                       | `default
+                       | [@bs.as "inherit"] `_inherit
+                       | `uri
+                     ]
+                       =?,
+      ~x: size=?,
+      ~y: size=?,
+      ~rotation: size=?,
+      ~scale: size=?,
+      ~origin: string=?,
+      ~originX: size=?,
+      ~originY: size=?
+    ) =>
+    React.element =
+    "Mask";
+};
+
+module Pattern = {
+  [@react.component] [@bs.module "react-native-svg"]
+  external make:
+    (
+      ~id: string=?,
+      ~x: size=?,
+      ~y: size=?,
+      ~width: size=?,
+      ~height: size=?,
+      ~patternTransform: (float, float, float, float, float, float)=?,
+      ~patternUnits: [@bs.string] [ | `userSpaceOnUse | `objectBoundingBox]=?,
+      ~patternContentUnits: [@bs.string] [
+                              | `userSpaceOnUse
+                              | `objectBoundingBox
+                            ]
+                              =?,
+      ~viewBox: string=?,
+      ~preserveAspectRatio: string=?
+    ) =>
+    React.element =
+    "Pattern";
+};
+
+module Marker = {
+  [@react.component] [@bs.module "react-native-svg"]
+  external make:
+    (
+      ~id: string=?,
+      ~viewBox: string=?,
+      ~preserveAspectRatio: string=?,
+      ~refX: size=?,
+      ~refY: size=?,
+      ~markerWidth: size=?,
+      ~markerHeight: size=?,
+      ~markerUnits: [@bs.string] [ | `userSpaceOnUse | `strokeWidth]=?,
+      ~orient: string=?
+    ) =>
+    React.element =
+    "Marker";
+};
+
+module ForeignObject = {
+  [@react.component] [@bs.module "react-native-svg"]
+  external make:
+    (~x: size=?, ~y: size=?, ~width: size=?, ~height: size=?) => React.element =
+    "ForeignObject";
+};
