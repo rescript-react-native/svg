@@ -1,5 +1,9 @@
 # Changelog of `@reason-react-native/svg`
 
+## 12.1.2 - 2020-04-15
+
+- Fix opacity & strokeOpacity
+
 ## 12.1.1 - 2020-04-15
 
 - Fix opacity (float not size)
