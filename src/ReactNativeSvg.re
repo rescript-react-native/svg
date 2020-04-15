@@ -1,5 +1,6 @@
 open ReactNative;
-open ReactNative.Style;
+
+type size = Style.size;
 type sizes = array(size);
 type opacity = string;
 external opacity: float => size = "%identity";
@@ -8,7 +9,7 @@ external opacity: float => size = "%identity";
 module SvgXml = {
   [@react.component] [@bs.module "react-native-svg"]
   external make:
-    (~xml: string, ~width: size=?, ~height: size=?, ~style: t=?) =>
+    (~xml: string, ~width: size=?, ~height: size=?, ~style: Style.t=?) =>
     React.element =
     "SvgXml";
 };
@@ -17,7 +18,7 @@ module SvgXml = {
 module SvgCss = {
   [@react.component] [@bs.module "react-native-svg"]
   external make:
-    (~xml: string, ~width: size=?, ~height: size=?, ~style: t=?) =>
+    (~xml: string, ~width: size=?, ~height: size=?, ~style: Style.t=?) =>
     React.element =
     "SvgCss";
 };
@@ -37,13 +38,13 @@ module Svg = {
     (
       ~color: Color.t=?,
       ~viewBox: string=?,
-      ~opacity: size=?,
+      ~opacity: float=?,
       ~onLayout: unit => unit=?,
       ~preserveAspectRatio: string=?,
-      ~style: t=?,
+      ~style: Style.t=?,
       ~width: size=?,
       ~height: size=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
@@ -62,7 +63,6 @@ module Svg = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -90,7 +90,7 @@ module Rect = {
       ~rx: size=?,
       ~ry: size=?,
       ~opacity: opacity=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
@@ -109,7 +109,6 @@ module Rect = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -136,7 +135,7 @@ module Circle = {
       ~cy: size=?,
       ~r: size=?,
       ~opacity: opacity=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
@@ -155,7 +154,6 @@ module Circle = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -183,7 +181,7 @@ module Ellipse = {
       ~rx: size=?,
       ~ry: size=?,
       ~opacity: opacity=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
@@ -202,7 +200,6 @@ module Ellipse = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -230,7 +227,7 @@ module Line = {
       ~x2: size=?,
       ~y2: size=?,
       ~opacity: opacity=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
@@ -249,7 +246,6 @@ module Line = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -274,7 +270,7 @@ module Polygon = {
     (
       ~points: string=?,
       ~opacity: opacity=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
@@ -293,7 +289,6 @@ module Polygon = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -318,7 +313,7 @@ module Polyline = {
     (
       ~points: string=?,
       ~opacity: opacity=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
@@ -337,7 +332,6 @@ module Polyline = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -362,7 +356,7 @@ module Path = {
     (
       ~d: string=?,
       ~opacity: opacity=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
@@ -381,7 +375,6 @@ module Path = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -409,7 +402,7 @@ module Text = {
       ~rotate: size=?,
       ~inlineSize: size=?,
       ~opacity: opacity=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Text props
       ~alignmentBaseline: [@bs.string] [
                             | `baseline
@@ -504,7 +497,6 @@ module Text = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -533,7 +525,7 @@ module TextPath = {
       ~method: [@bs.string] [ | `align | `stretch]=?,
       ~spacing: [@bs.string] [ | `auto | `exact]=?,
       ~midLine: [@bs.string] [ | `sharp | `smooth]=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Text props
       ~alignmentBaseline: [@bs.string] [
                             | `baseline
@@ -628,7 +620,6 @@ module TextPath = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -655,7 +646,7 @@ module Tspan = {
       ~dy: string=?,
       ~rotate: string=?,
       ~inlineSize: size=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Font Props
       ~fontStyle: [@bs.string] [ | `normal | `italic | `oblique]=?,
       ~fontVariant: [@bs.string] [ | `normal | `smallcaps]=?,
@@ -724,7 +715,6 @@ module Tspan = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -752,7 +742,7 @@ module Use = {
       ~width: size=?,
       ~height: size=?,
       ~opacity: opacity=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
@@ -771,7 +761,6 @@ module Use = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -795,7 +784,7 @@ module G = {
   external make:
     (
       ~opacity: opacity=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
@@ -814,7 +803,6 @@ module G = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -861,7 +849,7 @@ module Image = {
       ~height: size=?,
       ~preserveAspectRatio: string=?,
       ~opacity: opacity=?,
-      ~children: React.element,
+      ~children: React.element=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
@@ -880,7 +868,6 @@ module Image = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
@@ -974,7 +961,6 @@ module Mask = {
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
                        | `none
-                       | [@bs.as "non-scaling-stroke"] `nonScalingStroke
                        | `nonScalingStroke
                        | `default
                        | [@bs.as "inherit"] `_inherit
