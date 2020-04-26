@@ -3,7 +3,7 @@ open ReactNative;
 type size = Style.size;
 type sizes = array(size);
 type opacity = string;
-external opacity: float => size = "%identity";
+external opacity: float => opacity = "%identity";
 
 // https://github.com/react-native-community/react-native-svg#use-with-xml-strings
 module SvgXml = {
@@ -888,7 +888,7 @@ module Image = {
 
 module ClipPath = {
   [@react.component] [@bs.module "react-native-svg"]
-  external make: (~id: string) => React.element = "ClipPath";
+  external make: (~children: React.element=?, ~id: string) => React.element = "ClipPath";
 };
 
 module LinearGradient = {
