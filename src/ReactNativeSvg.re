@@ -888,7 +888,8 @@ module Image = {
 
 module ClipPath = {
   [@react.component] [@bs.module "react-native-svg"]
-  external make: (~children: React.element=?, ~id: string) => React.element = "ClipPath";
+  external make: (~children: React.element=?, ~id: string) => React.element =
+    "ClipPath";
 };
 
 module LinearGradient = {

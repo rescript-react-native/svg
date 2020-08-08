@@ -1,57 +1,57 @@
 'use strict';
 
 
-var SvgXml = { };
+var SvgXml = {};
 
-var SvgCss = { };
+var SvgCss = {};
 
-var Svg = { };
+var Svg = {};
 
-var Rect = { };
+var Rect = {};
 
-var Circle = { };
+var Circle = {};
 
-var Ellipse = { };
+var Ellipse = {};
 
-var Line = { };
+var Line = {};
 
-var Polygon = { };
+var Polygon = {};
 
-var Polyline = { };
+var Polyline = {};
 
-var Path = { };
+var Path = {};
 
-var $$Text = { };
+var $$Text = {};
 
-var TextPath = { };
+var TextPath = {};
 
-var Tspan = { };
+var Tspan = {};
 
-var Use = { };
+var Use = {};
 
-var G = { };
+var G = {};
 
-var $$Symbol = { };
+var $$Symbol = {};
 
-var Defs = { };
+var Defs = {};
 
-var $$Image = { };
+var $$Image = {};
 
-var ClipPath = { };
+var ClipPath = {};
 
-var LinearGradient = { };
+var LinearGradient = {};
 
-var Stop = { };
+var Stop = {};
 
-var RadialGradient = { };
+var RadialGradient = {};
 
-var Mask = { };
+var Mask = {};
 
-var Pattern = { };
+var Pattern = {};
 
-var Marker = { };
+var Marker = {};
 
-var ForeignObject = { };
+var ForeignObject = {};
 
 exports.SvgXml = SvgXml;
 exports.SvgCss = SvgCss;
