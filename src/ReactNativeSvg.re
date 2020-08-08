@@ -910,7 +910,7 @@ module LinearGradient = {
 module Stop = {
   [@react.component] [@bs.module "react-native-svg"]
   external make:
-    (~offset: size, ~stopColor: Color.t, ~stopOpacity: opacity) =>
+    (~offset: size=?, ~stopColor: Color.t=?, ~stopOpacity: opacity=?) =>
     React.element =
     "Stop";
 };
