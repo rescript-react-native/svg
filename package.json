@@ -12,6 +12,7 @@
   "repository": "https://github.com/reason-react-native/svg.git",
   "license": "MIT",
   "keywords": [
+    "rescript",
     "reason",
     "reasonml",
     "bucklescript",
