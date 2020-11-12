@@ -5,6 +5,25 @@ type sizes = array(size);
 type opacity = string;
 external opacity: float => opacity = "%identity";
 
+type baselineShift = [ | `sub | `super | `baseline];
+type clipRule = [ | `evenodd | `nonzero];
+type fillRule = [ | `evenodd | `nonzero];
+type fontStyle = [ | `normal | `italic | `oblique];
+type fontVariant = [ | `normal | `smallcaps];
+type fontVariantLigatures = [ | `normal | `none];
+type gradientUnits = [ | `userSpaceOnUse | `objectBoundingBox];
+type lengthAdjust = [ | `spacing | `spacingAndGlyphs];
+type markerUnits = [ | `userSpaceOnUse | `strokeWidth];
+type maskContentUnits = [ | `userSpaceOnUse | `objectBoundingBox];
+type maskUnits = [ | `userSpaceOnUse | `objectBoundingBox];
+type method = [ | `align | `stretch];
+type midLine = [ | `sharp | `smooth];
+type patternContentUnits = [ | `userSpaceOnUse | `objectBoundingBox];
+type patternUnits = [ | `userSpaceOnUse | `objectBoundingBox];
+type spacing = [ | `auto | `exact];
+type strokeLinecap = [ | `butt | `square | `round];
+type strokeLinejoin = [ | `miter | `bevel | `round];
+
 // https://github.com/react-native-community/react-native-svg#use-with-xml-strings
 module SvgXml = {
   [@react.component] [@bs.module "react-native-svg"]
@@ -49,16 +68,16 @@ module Svg = {
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -95,16 +114,16 @@ module Rect = {
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -140,16 +159,16 @@ module Circle = {
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -186,16 +205,16 @@ module Ellipse = {
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -232,16 +251,16 @@ module Line = {
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -275,16 +294,16 @@ module Polygon = {
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -318,16 +337,16 @@ module Polyline = {
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -361,16 +380,16 @@ module Path = {
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -423,15 +442,15 @@ module Text = {
                             | `hanging
                           ]
                             =?,
-      ~baselineShift: [@bs.string] [ | `sub | `super | `baseline]=?,
+      ~baselineShift: baselineShift=?,
       ~verticalAlign: size=?,
-      ~lengthAdjust: [@bs.string] [ | `spacing | `spacingAndGlyphs]=?,
+      ~lengthAdjust: lengthAdjust=?,
       ~textLength: string=?,
       // ~fontData: todo=?,
       ~fontFeatureSettings: string=?,
       // Font Props
-      ~fontStyle: [@bs.string] [ | `normal | `italic | `oblique]=?,
-      ~fontVariant: [@bs.string] [ | `normal | `smallcaps]=?,
+      ~fontStyle: fontStyle=?,
+      ~fontVariant: fontVariant=?,
       ~fontWeight: [@bs.string] [
                      | `normal
                      | `bold
@@ -477,22 +496,22 @@ module Text = {
       ~wordSpacing: size=?,
       ~kerning: size=?,
       ~fontFeatureSettings: string=?,
-      ~fontVariantLigatures: [@bs.string] [ | `normal | `none]=?,
+      ~fontVariantLigatures: fontVariantLigatures=?,
       ~fontVariationSettings: string=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -522,9 +541,9 @@ module TextPath = {
       ~xlinkHref: string=?,
       ~href: string=?,
       ~startOffset: size=?,
-      ~method: [@bs.string] [ | `align | `stretch]=?,
-      ~spacing: [@bs.string] [ | `auto | `exact]=?,
-      ~midLine: [@bs.string] [ | `sharp | `smooth]=?,
+      ~method: method=?,
+      ~spacing: spacing=?,
+      ~midLine: midLine=?,
       ~children: React.element=?,
       // Text props
       ~alignmentBaseline: [@bs.string] [
@@ -546,15 +565,15 @@ module TextPath = {
                             | `hanging
                           ]
                             =?,
-      ~baselineShift: [@bs.string] [ | `sub | `super | `baseline]=?,
+      ~baselineShift: baselineShift=?,
       ~verticalAlign: size=?,
-      ~lengthAdjust: [@bs.string] [ | `spacing | `spacingAndGlyphs]=?,
+      ~lengthAdjust: lengthAdjust=?,
       ~textLength: string=?,
       // ~fontData: todo=?,
       ~fontFeatureSettings: string=?,
       // Font Props
-      ~fontStyle: [@bs.string] [ | `normal | `italic | `oblique]=?,
-      ~fontVariant: [@bs.string] [ | `normal | `smallcaps]=?,
+      ~fontStyle: fontStyle=?,
+      ~fontVariant: fontVariant=?,
       ~fontWeight: [@bs.string] [
                      | `normal
                      | `bold
@@ -600,22 +619,22 @@ module TextPath = {
       ~wordSpacing: size=?,
       ~kerning: size=?,
       ~fontFeatureSettings: string=?,
-      ~fontVariantLigatures: [@bs.string] [ | `normal | `none]=?,
+      ~fontVariantLigatures: fontVariantLigatures=?,
       ~fontVariationSettings: string=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -648,8 +667,8 @@ module Tspan = {
       ~inlineSize: size=?,
       ~children: React.element=?,
       // Font Props
-      ~fontStyle: [@bs.string] [ | `normal | `italic | `oblique]=?,
-      ~fontVariant: [@bs.string] [ | `normal | `smallcaps]=?,
+      ~fontStyle: fontStyle=?,
+      ~fontVariant: fontVariant=?,
       ~fontWeight: [@bs.string] [
                      | `normal
                      | `bold
@@ -695,22 +714,22 @@ module Tspan = {
       ~wordSpacing: size=?,
       ~kerning: size=?,
       ~fontFeatureSettings: string=?,
-      ~fontVariantLigatures: [@bs.string] [ | `normal | `none]=?,
+      ~fontVariantLigatures: fontVariantLigatures=?,
       ~fontVariationSettings: string=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -747,16 +766,16 @@ module Use = {
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -789,16 +808,16 @@ module G = {
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -854,16 +873,16 @@ module Image = {
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -927,7 +946,7 @@ module RadialGradient = {
       ~cx: size=?,
       ~cy: size=?,
       ~r: size=?,
-      ~gradientUnits: [@bs.string] [ | `userSpaceOnUse | `objectBoundingBox]=?,
+      ~gradientUnits: gradientUnits=?,
       ~gradientTransform: (float, float, float, float, float, float)=?
     ) =>
     React.element =
@@ -941,23 +960,22 @@ module Mask = {
       ~width: size=?,
       ~height: size=?,
       ~maskTransform: (float, float, float, float, float, float)=?,
-      ~maskUnits: [@bs.string] [ | `userSpaceOnUse | `objectBoundingBox]=?,
-      ~maskContentUnits: [@bs.string] [ | `userSpaceOnUse | `objectBoundingBox]
-                           =?,
+      ~maskUnits: maskUnits=?,
+      ~maskContentUnits: maskContentUnits=?,
       // Commons Props
       ~id: string=?,
       ~fill: Color.t=?,
       ~fillOpacity: opacity=?,
-      ~fillRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~fillRule: fillRule=?,
       ~stroke: Color.t=?,
       ~strokeWidth: size=?,
       ~strokeOpacity: opacity=?,
       ~strokeDasharray: array(size)=?,
       ~strokeDashoffset: size=?,
-      ~strokeLinecap: [@bs.string] [ | `butt | `square | `round]=?,
-      ~strokeLinejoin: [@bs.string] [ | `miter | `bevel | `round]=?,
+      ~strokeLinecap: strokeLinecap=?,
+      ~strokeLinejoin: strokeLinejoin=?,
       ~strokeMiterlimit: size=?,
-      ~clipRule: [@bs.string] [ | `evenodd | `nonzero]=?,
+      ~clipRule: clipRule=?,
       ~clipPath: string=?,
       ~transform: string=?,
       ~vectorEffect: [@bs.string] [
@@ -990,12 +1008,8 @@ module Pattern = {
       ~width: size=?,
       ~height: size=?,
       ~patternTransform: (float, float, float, float, float, float)=?,
-      ~patternUnits: [@bs.string] [ | `userSpaceOnUse | `objectBoundingBox]=?,
-      ~patternContentUnits: [@bs.string] [
-                              | `userSpaceOnUse
-                              | `objectBoundingBox
-                            ]
-                              =?,
+      ~patternUnits: patternUnits=?,
+      ~patternContentUnits: patternContentUnits=?,
       ~viewBox: string=?,
       ~preserveAspectRatio: string=?
     ) =>
@@ -1014,7 +1028,7 @@ module Marker = {
       ~refY: size=?,
       ~markerWidth: size=?,
       ~markerHeight: size=?,
-      ~markerUnits: [@bs.string] [ | `userSpaceOnUse | `strokeWidth]=?,
+      ~markerUnits: markerUnits=?,
       ~orient: string=?
     ) =>
     React.element =
