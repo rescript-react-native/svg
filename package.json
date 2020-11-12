@@ -1,6 +1,6 @@
 {
   "name": "@reason-react-native/svg",
-  "version": "12.1.4",
+  "version": "12.1.4-0.63",
   "publishConfig": {
     "access": "public"
   },

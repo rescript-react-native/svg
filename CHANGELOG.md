@@ -1,5 +1,10 @@
 # Changelog of `@reason-react-native/svg`
 
+## 12.1.4-0.63 - 2020-11-12
+
+- rescript 8.2
+- reason-react-native 0.63
+
 ## 12.1.4 - 2020-08-08
 
 - Fixed `Stop` props, that are all optional [09fe188](https://github.com/reason-react-native/svg/commit/09fe188) by [@MoOx](https://github.com/MoOx)
