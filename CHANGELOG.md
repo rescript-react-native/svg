@@ -1,5 +1,9 @@
 # Changelog of `@reason-react-native/svg`
 
+## 12.1.5-0.63 - 2020-11-18
+
+Fix npm description
+
 ## 12.1.4-0.63 - 2020-11-12
 
 - rescript 8.2
