@@ -1,5 +1,9 @@
 # Changelog of `@reason-react-native/svg`
 
+## 12.1.6-0.63 - 2021-03-15
+
+- Added children prop to RadialGradient [#7](https://github.com/reason-react-native/svg/pull/7) by [@reck753](https://github.com/reck753)
+
 ## 12.1.5-0.63 - 2020-11-18
 
 Fix npm description
