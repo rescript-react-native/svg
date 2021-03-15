@@ -947,7 +947,8 @@ module RadialGradient = {
       ~cy: size=?,
       ~r: size=?,
       ~gradientUnits: gradientUnits=?,
-      ~gradientTransform: (float, float, float, float, float, float)=?
+      ~gradientTransform: (float, float, float, float, float, float)=?,
+      ~children: React.element
     ) =>
     React.element =
     "RadialGradient";
