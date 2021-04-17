@@ -122,6 +122,11 @@
   dependencies:
     "@types/node" ">= 8"
 
+"@rescript/react@^0.10.2":
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/@rescript/react/-/react-0.10.2.tgz#170d2a5ff34ad09cd614d92467d5efad95202794"
+  integrity sha512-Qe21P4WnrmrbhbEMQ4dpaXC1/iMMc7JmqjuSpZouSP+s41K5dCXUGY9sds30gajU74lSfJdG2PzSDYcNAcDyVA==
+
 "@sindresorhus/df@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@sindresorhus/df/-/df-1.0.1.tgz#c69b66f52f6fcdd287c807df210305dbaf78500d"
@@ -1118,6 +1123,11 @@ regenerator-runtime@^0.13.4:
   version "0.13.5"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
   integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
+
+rescript-react-native@^0.64.2:
+  version "0.64.2"
+  resolved "https://registry.yarnpkg.com/rescript-react-native/-/rescript-react-native-0.64.2.tgz#01b6f7bc210d6af5d3b2db04ae46a27cdb0bed98"
+  integrity sha512-gj/RwquWhQh17JiK6AlyIMkh8wy0U8tIRAiWlZyfShS06/5qCIgMlkJbYY/b4UiJNxYASDKeJNIRWyH3fJ8wVQ==
 
 resolve-from@^4.0.0:
   version "4.0.0"

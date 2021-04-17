@@ -39,13 +39,13 @@
     "release": "npmpub"
   },
   "devDependencies": {
+    "@rescript/react": "^0.10.2",
     "bs-platform": "^8.2.0",
     "husky": "^4.0.0",
     "lint-staged": "^10.0.0",
     "npmpub": "^5.0.0",
     "prettier": "^2.0.0",
-    "reason-react": "^0.9.0",
-    "reason-react-native": "^0.63.0"
+    "rescript-react-native": "^0.64.2"
   },
   "prettier": {
     "trailingComma": "all"
