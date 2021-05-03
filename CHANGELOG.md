@@ -1,5 +1,9 @@
 # Changelog of `@rescript-react-native/svg`
 
+## 12.1.7 - 2021-05-03
+
+ReScript
+
 ## 12.1.6-0.63 - 2021-03-15
 
 - Added children prop to RadialGradient [#7](https://github.com/rescript-react-native/svg/pull/7) by [@reck753](https://github.com/reck753)
