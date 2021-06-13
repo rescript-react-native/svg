@@ -98,6 +98,15 @@ module Svg = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Svg"
 }
 
@@ -141,6 +150,15 @@ module Rect = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Rect"
 }
 
@@ -183,6 +201,15 @@ module Circle = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Circle"
 }
 
@@ -226,6 +253,15 @@ module Ellipse = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Ellipse"
 }
 
@@ -269,6 +305,15 @@ module Line = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Line"
 }
 
@@ -309,6 +354,15 @@ module Polygon = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Polygon"
 }
 
@@ -349,6 +403,15 @@ module Polyline = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Polyline"
 }
 
@@ -389,6 +452,15 @@ module Path = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Path"
 }
 
@@ -508,6 +580,15 @@ module Text = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Text"
 }
 
@@ -628,6 +709,15 @@ module TextPath = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "TextPath"
 }
 
@@ -720,6 +810,15 @@ module Tspan = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "TSpan"
 }
 
@@ -763,6 +862,15 @@ module Use = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Use"
 }
 
@@ -802,6 +910,15 @@ module G = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "G"
 }
 
@@ -861,6 +978,15 @@ module Image = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Image"
 }
 
@@ -950,6 +1076,15 @@ module Mask = {
     ~origin: string=?,
     ~originX: size=?,
     ~originY: size=?,
+    // Responder Props
+    ~onPress: unit => unit=?,
+    ~onPressIn: unit => unit=?,
+    ~onPressOut: unit => unit=?,
+    ~onLongPress: unit => unit=?,
+    ~disabled: bool=?,
+    ~delayPressIn: float=?,
+    ~delayPressOut: float=?,
+    ~delayLongPress: float=?,
   ) => React.element = "Mask"
 }
 
