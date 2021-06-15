@@ -99,14 +99,14 @@ module Svg = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Svg"
 }
 
@@ -151,14 +151,14 @@ module Rect = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Rect"
 }
 
@@ -202,14 +202,14 @@ module Circle = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Circle"
 }
 
@@ -254,14 +254,14 @@ module Ellipse = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Ellipse"
 }
 
@@ -306,14 +306,14 @@ module Line = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Line"
 }
 
@@ -355,14 +355,14 @@ module Polygon = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Polygon"
 }
 
@@ -404,14 +404,14 @@ module Polyline = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Polyline"
 }
 
@@ -453,14 +453,14 @@ module Path = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Path"
 }
 
@@ -581,14 +581,14 @@ module Text = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Text"
 }
 
@@ -710,14 +710,14 @@ module TextPath = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "TextPath"
 }
 
@@ -811,14 +811,14 @@ module Tspan = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "TSpan"
 }
 
@@ -863,14 +863,14 @@ module Use = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Use"
 }
 
@@ -911,14 +911,14 @@ module G = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "G"
 }
 
@@ -979,14 +979,14 @@ module Image = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Image"
 }
 
@@ -1077,14 +1077,14 @@ module Mask = {
     ~originX: size=?,
     ~originY: size=?,
     // Responder Props
-    ~onPress: unit => unit=?,
-    ~onPressIn: unit => unit=?,
-    ~onPressOut: unit => unit=?,
-    ~onLongPress: unit => unit=?,
+    ~onPress: Event.pressEvent => unit=?,
+    ~onPressIn: Event.pressEvent => unit=?,
+    ~onPressOut: Event.pressEvent => unit=?,
+    ~onLongPress: Event.pressEvent => unit=?,
     ~disabled: bool=?,
-    ~delayPressIn: float=?,
-    ~delayPressOut: float=?,
-    ~delayLongPress: float=?,
+    ~delayPressIn: int=?,
+    ~delayPressOut: int=?,
+    ~delayLongPress: int=?,
   ) => React.element = "Mask"
 }
 
