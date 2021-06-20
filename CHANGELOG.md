@@ -1,5 +1,9 @@
 # Changelog of `@rescript-react-native/svg`
 
+## 12.1.8 - 2021-06-20
+
+- Added touch event props [#9](https://github.com/rescript-react-native/svg/pull/9) by [@reck753](https://github.com/reck753)
+
 ## 12.1.7 - 2021-05-03
 
 ReScript

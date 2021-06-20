@@ -1,7 +1,7 @@
 {
   "name": "@rescript-react-native/svg",
   "description": "ReScript bindings for react-native-svg.",
-  "version": "12.1.7",
+  "version": "12.1.8",
   "publishConfig": {
     "access": "public"
   },
