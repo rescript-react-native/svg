@@ -498,7 +498,6 @@ module Text = {
     ~lengthAdjust: lengthAdjust=?,
     ~textLength: string=?,
     // ~fontData: todo=?,
-    ~fontFeatureSettings: string=?,
     // Font Props
     ~fontStyle: fontStyle=?,
     ~fontVariant: fontVariant=?,
@@ -627,7 +626,6 @@ module TextPath = {
     ~lengthAdjust: lengthAdjust=?,
     ~textLength: string=?,
     // ~fontData: todo=?,
-    ~fontFeatureSettings: string=?,
     // Font Props
     ~fontStyle: fontStyle=?,
     ~fontVariant: fontVariant=?,
