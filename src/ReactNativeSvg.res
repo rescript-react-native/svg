@@ -1101,6 +1101,7 @@ module Pattern = {
     ~patternContentUnits: patternContentUnits=?,
     ~viewBox: string=?,
     ~preserveAspectRatio: string=?,
+    ~children: React.element,
   ) => React.element = "Pattern"
 }
 
