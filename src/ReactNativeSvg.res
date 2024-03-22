@@ -5,12 +5,59 @@ type sizes = array<size>
 type opacity = string
 external opacity: float => opacity = "%identity"
 
+type alignmentBaseline = [
+  | #baseline
+  | #"text-bottom"
+  | #alphabetic
+  | #ideographic
+  | #middle
+  | #central
+  | #mathematical
+  | #"text-top"
+  | #bottom
+  | #center
+  | #top
+  | #"text-before-edge"
+  | #"text-after-edge"
+  | #"before-edge"
+  | #"after-edge"
+  | #hanging
+]
 type baselineShift = [#sub | #super | #baseline]
 type clipRule = [#evenodd | #nonzero]
 type fillRule = [#evenodd | #nonzero]
+type fontStretch = [
+  | #normal
+  | #wider
+  | #narrower
+  | #"ultra-condensed"
+  | #"extra-condensed"
+  | #condensed
+  | #"semi-condensed"
+  | #"semi-expanded"
+  | #expanded
+  | #"extra-expanded"
+  | #"ultra-expanded"
+]
 type fontStyle = [#normal | #italic | #oblique]
+
 type fontVariant = [#normal | #smallcaps]
 type fontVariantLigatures = [#normal | #none]
+type fontWeight = [
+  | #normal
+  | #bold
+  | #bolder
+  | #lighter
+  | #100
+  | #200
+  | #300
+  | #400
+  | #500
+  | #600
+  | #700
+  | #800
+  | #900
+]
 type gradientUnits = [#userSpaceOnUse | #objectBoundingBox]
 type lengthAdjust = [#spacing | #spacingAndGlyphs]
 type markerUnits = [#userSpaceOnUse | #strokeWidth]
@@ -23,6 +70,21 @@ type patternUnits = [#userSpaceOnUse | #objectBoundingBox]
 type spacing = [#auto | #exact]
 type strokeLinecap = [#butt | #square | #round]
 type strokeLinejoin = [#miter | #bevel | #round]
+type textAnchor = [#start | #middle | #end]
+type textDecoration = [
+  | #none
+  | #underline
+  | #overline
+  | #"line-through"
+  | #blink
+]
+type vectorEffect = [
+  | #none
+  | #nonScalingStroke
+  | #default
+  | #inherit
+  | #uri
+]
 
 // https://github.com/react-native-community/react-native-svg#use-with-xml-strings
 module SvgXml = {
@@ -83,14 +145,7 @@ module Svg = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -135,14 +190,7 @@ module Rect = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -186,14 +234,7 @@ module Circle = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -238,14 +279,7 @@ module Ellipse = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -290,14 +324,7 @@ module Line = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -339,14 +366,7 @@ module Polygon = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -388,14 +408,7 @@ module Polyline = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -437,14 +450,7 @@ module Path = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -474,25 +480,7 @@ module Text = {
     ~opacity: opacity=?,
     ~children: React.element=?,
     // Text props
-    ~alignmentBaseline: @string
-    [
-      | #baseline
-      | @as("text-bottom") #textBottom
-      | #alphabetic
-      | #ideographic
-      | #middle
-      | #central
-      | #mathematical
-      | @as("text-top") #textTop
-      | #bottom
-      | #center
-      | #top
-      | @as("text-before-edge") #textBeforeEdge
-      | @as("text-after-edge") #textAfterEdge
-      | @as("before-edge") #beforeEdge
-      | @as("after-edge") #afterEdge
-      | #hanging
-    ]=?,
+    ~alignmentBaseline: alignmentBaseline=?,
     ~baselineShift: baselineShift=?,
     ~verticalAlign: size=?,
     ~lengthAdjust: lengthAdjust=?,
@@ -502,51 +490,15 @@ module Text = {
     // Font Props
     ~fontStyle: fontStyle=?,
     ~fontVariant: fontVariant=?,
-    ~fontWeight: @string
-    [
-      | #normal
-      | #bold
-      | #bolder
-      | #lighter
-      | @as("100") #_100
-      | @as("200") #_200
-      | @as("300") #_300
-      | @as("400") #_400
-      | @as("500") #_500
-      | @as("600") #_600
-      | @as("700") #_700
-      | @as("800") #_800
-      | @as("900") #_900
-    ]=?,
-    ~fontStretch: @string
-    [
-      | #normal
-      | #wider
-      | #narrower
-      | @as("ultra-condensed") #ultraCondensed
-      | @as("extra-condensed") #extraCondensed
-      | #condensed
-      | @as("semi-condensed") #semiCondensed
-      | @as("semi-expanded") #semiExpanded
-      | #expanded
-      | @as("extra-expanded") #extraExpanded
-      | @as("ultra-expanded") #ultraExpanded
-    ]=?,
+    ~fontWeight: fontWeight=?,
+    ~fontStretch: fontStretch=?,
     ~fontSize: size=?,
     ~fontFamily: string=?,
-    ~textAnchor: @string [#start | #middle | @as("end") #_end]=?,
-    ~textDecoration: @string
-    [
-      | #none
-      | #underline
-      | #overline
-      | @as("line-through") #lineThrough
-      | #blink
-    ]=?,
+    ~textAnchor: textAnchor=?,
+    ~textDecoration: textDecoration=?,
     ~letterSpacing: size=?,
     ~wordSpacing: size=?,
     ~kerning: size=?,
-    ~fontFeatureSettings: string=?,
     ~fontVariantLigatures: fontVariantLigatures=?,
     ~fontVariationSettings: string=?,
     // Commons Props
@@ -565,14 +517,7 @@ module Text = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -603,25 +548,7 @@ module TextPath = {
     ~midLine: midLine=?,
     ~children: React.element=?,
     // Text props
-    ~alignmentBaseline: @string
-    [
-      | #baseline
-      | @as("text-bottom") #textBottom
-      | #alphabetic
-      | #ideographic
-      | #middle
-      | #central
-      | #mathematical
-      | @as("text-top") #textTop
-      | #bottom
-      | #center
-      | #top
-      | @as("text-before-edge") #textBeforeEdge
-      | @as("text-after-edge") #textAfterEdge
-      | @as("before-edge") #beforeEdge
-      | @as("after-edge") #afterEdge
-      | #hanging
-    ]=?,
+    ~alignmentBaseline: alignmentBaseline=?,
     ~baselineShift: baselineShift=?,
     ~verticalAlign: size=?,
     ~lengthAdjust: lengthAdjust=?,
@@ -631,51 +558,15 @@ module TextPath = {
     // Font Props
     ~fontStyle: fontStyle=?,
     ~fontVariant: fontVariant=?,
-    ~fontWeight: @string
-    [
-      | #normal
-      | #bold
-      | #bolder
-      | #lighter
-      | @as("100") #_100
-      | @as("200") #_200
-      | @as("300") #_300
-      | @as("400") #_400
-      | @as("500") #_500
-      | @as("600") #_600
-      | @as("700") #_700
-      | @as("800") #_800
-      | @as("900") #_900
-    ]=?,
-    ~fontStretch: @string
-    [
-      | #normal
-      | #wider
-      | #narrower
-      | @as("ultra-condensed") #ultraCondensed
-      | @as("extra-condensed") #extraCondensed
-      | #condensed
-      | @as("semi-condensed") #semiCondensed
-      | @as("semi-expanded") #semiExpanded
-      | #expanded
-      | @as("extra-expanded") #extraExpanded
-      | @as("ultra-expanded") #ultraExpanded
-    ]=?,
+    ~fontWeight: fontWeight=?,
+    ~fontStretch: fontStretch=?,
     ~fontSize: size=?,
     ~fontFamily: string=?,
-    ~textAnchor: @string [#start | #middle | @as("end") #_end]=?,
-    ~textDecoration: @string
-    [
-      | #none
-      | #underline
-      | #overline
-      | @as("line-through") #lineThrough
-      | #blink
-    ]=?,
+    ~textAnchor: textAnchor=?,
+    ~textDecoration: textDecoration=?,
     ~letterSpacing: size=?,
     ~wordSpacing: size=?,
     ~kerning: size=?,
-    ~fontFeatureSettings: string=?,
     ~fontVariantLigatures: fontVariantLigatures=?,
     ~fontVariationSettings: string=?,
     // Commons Props
@@ -694,14 +585,7 @@ module TextPath = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -732,47 +616,12 @@ module Tspan = {
     // Font Props
     ~fontStyle: fontStyle=?,
     ~fontVariant: fontVariant=?,
-    ~fontWeight: @string
-    [
-      | #normal
-      | #bold
-      | #bolder
-      | #lighter
-      | @as("100") #_100
-      | @as("200") #_200
-      | @as("300") #_300
-      | @as("400") #_400
-      | @as("500") #_500
-      | @as("600") #_600
-      | @as("700") #_700
-      | @as("800") #_800
-      | @as("900") #_900
-    ]=?,
-    ~fontStretch: @string
-    [
-      | #normal
-      | #wider
-      | #narrower
-      | @as("ultra-condensed") #ultraCondensed
-      | @as("extra-condensed") #extraCondensed
-      | #condensed
-      | @as("semi-condensed") #semiCondensed
-      | @as("semi-expanded") #semiExpanded
-      | #expanded
-      | @as("extra-expanded") #extraExpanded
-      | @as("ultra-expanded") #ultraExpanded
-    ]=?,
+    ~fontWeight: fontWeight=?,
+    ~fontStretch: fontStretch=?,
     ~fontSize: size=?,
     ~fontFamily: string=?,
-    ~textAnchor: @string [#start | #middle | @as("end") #_end]=?,
-    ~textDecoration: @string
-    [
-      | #none
-      | #underline
-      | #overline
-      | @as("line-through") #lineThrough
-      | #blink
-    ]=?,
+    ~textAnchor: textAnchor=?,
+    ~textDecoration: textDecoration=?,
     ~letterSpacing: size=?,
     ~wordSpacing: size=?,
     ~kerning: size=?,
@@ -795,14 +644,7 @@ module Tspan = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -847,14 +689,7 @@ module Use = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -895,14 +730,7 @@ module G = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -963,14 +791,7 @@ module Image = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
@@ -1061,14 +882,7 @@ module Mask = {
     ~clipRule: clipRule=?,
     ~clipPath: string=?,
     ~transform: string=?,
-    ~vectorEffect: @string
-    [
-      | #none
-      | #nonScalingStroke
-      | #default
-      | @as("inherit") #_inherit
-      | #uri
-    ]=?,
+    ~vectorEffect: vectorEffect=?,
     ~x: size=?,
     ~y: size=?,
     ~rotation: size=?,
