@@ -10,9 +10,6 @@
     "@rescript/react": ">=0.11.0",
     "rescript-react-native": ">=0.71.0"
   },
-  "overrides": {
-    "react": "17.0.2"
-  },
   "repository": "https://github.com/rescript-react-native/svg.git",
   "license": "MIT",
   "keywords": [
