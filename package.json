@@ -7,11 +7,8 @@
   },
   "peerDependencies": {
     "react-native-svg": ">=12.1.0",
-    "@rescript/react": ">=0.10.0",
-    "rescript-react-native": ">=0.64.3"
-  },
-  "overrides": {
-    "react": "17.0.2"
+    "@rescript/react": ">=0.11.0",
+    "rescript-react-native": ">=0.71.0"
   },
   "repository": "https://github.com/rescript-react-native/svg.git",
   "license": "MIT",
@@ -40,13 +37,13 @@
     "release": "npmpub"
   },
   "devDependencies": {
-    "rescript": "^9.1.4",
+    "rescript": "^10.1.4",
     "husky": "^4.0.0",
     "lint-staged": "^10.0.0",
     "npmpub": "^5.0.0",
     "prettier": "^2.0.0",
-    "@rescript/react": "^0.10.0",
-    "rescript-react-native": ">=0.64.3"
+    "@rescript/react": "^0.11.0",
+    "rescript-react-native": ">=0.71.0"
   },
   "prettier": {
     "trailingComma": "all"

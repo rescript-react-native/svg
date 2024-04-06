@@ -1,6 +1,8 @@
 {
   "name": "@rescript-react-native/svg",
-  "reason": { "react-jsx": 3 },
+  "jsx": {
+    "version": 4
+  },
   "package-specs": {
     "module": "commonjs",
     "in-source": true
