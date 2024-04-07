@@ -1,5 +1,14 @@
 # Changelog of `@rescript-react-native/svg`
 
+## 13.0.1 - 2024-04-07
+
+- Add children prop to Pattern [a39ed57](https://github.com/rescript-react-native/svg/commit/a39ed57) by [@Freddy03h](https://github.com/Freddy03h)
+- rescript 10, rescript-react 11 and jsx 4 [#15](https://github.com/rescript-react-native/svg/pull/15) by [@Freddy03h](https://github.com/Freddy03h)
+
+## 13.0.0 - 2024-04-06
+
+- bad release, sorry
+
 ## 12.1.9 - 2022-04-16
 
 - Simplify peerDependencies
