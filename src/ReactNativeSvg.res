@@ -116,638 +116,269 @@ module SvgCss = {
 // SvgCssUri
 // SvgWithCssUri
 
+type commonProps = {
+  id?: string,
+  fill?: Color.t,
+  fillOpacity?: opacity,
+  fillRule?: fillRule,
+  stroke?: Color.t,
+  strokeWidth?: size,
+  strokeOpacity?: opacity,
+  strokeDasharray?: array<size>,
+  strokeDashoffset?: size,
+  strokeLinecap?: strokeLinecap,
+  strokeLinejoin?: strokeLinejoin,
+  strokeMiterlimit?: size,
+  clipRule?: clipRule,
+  clipPath?: string,
+  transform?: string,
+  vectorEffect?: vectorEffect,
+  x?: size,
+  y?: size,
+  rotation?: size,
+  scale?: size,
+  origin?: string,
+  originX?: size,
+  originY?: size,
+}
+
+type responderProps = {
+  onPress?: Event.pressEvent => unit,
+  onPressIn?: Event.pressEvent => unit,
+  onPressOut?: Event.pressEvent => unit,
+  onLongPress?: Event.pressEvent => unit,
+  disabled?: bool,
+  delayPressIn?: int,
+  delayPressOut?: int,
+  delayLongPress?: int,
+}
+
+type textProps = {
+  alignmentBaseline?: alignmentBaseline,
+  baselineShift?: baselineShift,
+  verticalAlign?: size,
+  lengthAdjust?: lengthAdjust,
+  textLength?: string,
+}
+
+type fontProps = {
+  fontStyle?: fontStyle,
+  fontVariant?: fontVariant,
+  fontWeight?: fontWeight,
+  fontStretch?: fontStretch,
+  fontSize?: size,
+  fontFamily?: string,
+  textAnchor?: textAnchor,
+  textDecoration?: textDecoration,
+  letterSpacing?: size,
+  wordSpacing?: size,
+  kerning?: size,
+  fontFeatureSettings?: string,
+  fontVariantLigatures?: fontVariantLigatures,
+  fontVariationSettings?: string,
+}
+
 // https://github.com/react-native-community/react-native-svg#svg
 module Svg = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~color: Color.t=?,
-    ~viewBox: string=?,
-    ~opacity: opacity=?,
-    ~onLayout: unit => unit=?,
-    ~preserveAspectRatio: string=?,
-    ~style: Style.t=?,
-    ~width: size=?,
-    ~height: size=?,
-    ~children: React.element=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Svg"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    color?: Color.t,
+    viewBox?: string,
+    opacity?: opacity,
+    onLayout?: unit => unit,
+    preserveAspectRatio?: string,
+    style?: Style.t,
+    width?: size,
+    height?: size,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Svg"
 }
 
 module Rect = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~width: size=?,
-    ~height: size=?,
-    ~rx: size=?,
-    ~ry: size=?,
-    ~opacity: opacity=?,
-    ~children: React.element=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Rect"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    width?: size,
+    height?: size,
+    rx?: size,
+    ry?: size,
+    opacity?: opacity,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Rect"
 }
 
 module Circle = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~cx: size=?,
-    ~cy: size=?,
-    ~r: size=?,
-    ~opacity: opacity=?,
-    ~children: React.element=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Circle"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    cx?: size,
+    cy?: size,
+    r?: size,
+    opacity?: opacity,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Circle"
 }
 
 module Ellipse = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~cx: size=?,
-    ~cy: size=?,
-    ~rx: size=?,
-    ~ry: size=?,
-    ~opacity: opacity=?,
-    ~children: React.element=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Ellipse"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    cx?: size,
+    cy?: size,
+    rx?: size,
+    ry?: size,
+    opacity?: opacity,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Ellipse"
 }
 
 module Line = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~x1: size=?,
-    ~y1: size=?,
-    ~x2: size=?,
-    ~y2: size=?,
-    ~opacity: opacity=?,
-    ~children: React.element=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Line"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    x1?: size,
+    y1?: size,
+    x2?: size,
+    y2?: size,
+    opacity?: opacity,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Line"
 }
 
 module Polygon = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~points: string=?,
-    ~opacity: opacity=?,
-    ~children: React.element=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Polygon"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    points?: string,
+    opacity?: opacity,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Polygon"
 }
 
 module Polyline = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~points: string=?,
-    ~opacity: opacity=?,
-    ~children: React.element=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Polyline"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    points?: string,
+    opacity?: opacity,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Polyline"
 }
 
 module Path = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~d: string=?,
-    ~opacity: opacity=?,
-    ~children: React.element=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Path"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    d?: string,
+    opacity?: opacity,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Path"
 }
 
 module Text = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~dx: size=?,
-    ~dy: size=?,
-    ~rotate: size=?,
-    ~inlineSize: size=?,
-    ~opacity: opacity=?,
-    ~children: React.element=?,
-    // Text props
-    ~alignmentBaseline: alignmentBaseline=?,
-    ~baselineShift: baselineShift=?,
-    ~verticalAlign: size=?,
-    ~lengthAdjust: lengthAdjust=?,
-    ~textLength: string=?,
-    // ~fontData: todo=?,
-    ~fontFeatureSettings: string=?,
-    // Font Props
-    ~fontStyle: fontStyle=?,
-    ~fontVariant: fontVariant=?,
-    ~fontWeight: fontWeight=?,
-    ~fontStretch: fontStretch=?,
-    ~fontSize: size=?,
-    ~fontFamily: string=?,
-    ~textAnchor: textAnchor=?,
-    ~textDecoration: textDecoration=?,
-    ~letterSpacing: size=?,
-    ~wordSpacing: size=?,
-    ~kerning: size=?,
-    ~fontVariantLigatures: fontVariantLigatures=?,
-    ~fontVariationSettings: string=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Text"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    ...textProps,
+    ...fontProps,
+    dx?: size,
+    dy?: size,
+    rotate?: size,
+    inlineSize?: size,
+    opacity?: opacity,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Text"
 }
 
 module TextPath = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~xlinkHref: string=?,
-    ~href: string=?,
-    ~startOffset: size=?,
-    ~method: method_=?,
-    ~spacing: spacing=?,
-    ~midLine: midLine=?,
-    ~children: React.element=?,
-    // Text props
-    ~alignmentBaseline: alignmentBaseline=?,
-    ~baselineShift: baselineShift=?,
-    ~verticalAlign: size=?,
-    ~lengthAdjust: lengthAdjust=?,
-    ~textLength: string=?,
-    // ~fontData: todo=?,
-    ~fontFeatureSettings: string=?,
-    // Font Props
-    ~fontStyle: fontStyle=?,
-    ~fontVariant: fontVariant=?,
-    ~fontWeight: fontWeight=?,
-    ~fontStretch: fontStretch=?,
-    ~fontSize: size=?,
-    ~fontFamily: string=?,
-    ~textAnchor: textAnchor=?,
-    ~textDecoration: textDecoration=?,
-    ~letterSpacing: size=?,
-    ~wordSpacing: size=?,
-    ~kerning: size=?,
-    ~fontVariantLigatures: fontVariantLigatures=?,
-    ~fontVariationSettings: string=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "TextPath"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    ...textProps,
+    ...fontProps,
+    xlinkHref?: string,
+    href?: string,
+    startOffset?: size,
+    method?: method_,
+    spacing?: spacing,
+    midLine?: midLine,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "TextPath"
 }
 
 module Tspan = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~dx: string=?,
-    ~dy: string=?,
-    ~rotate: string=?,
-    ~inlineSize: size=?,
-    ~children: React.element=?,
-    // Font Props
-    ~fontStyle: fontStyle=?,
-    ~fontVariant: fontVariant=?,
-    ~fontWeight: fontWeight=?,
-    ~fontStretch: fontStretch=?,
-    ~fontSize: size=?,
-    ~fontFamily: string=?,
-    ~textAnchor: textAnchor=?,
-    ~textDecoration: textDecoration=?,
-    ~letterSpacing: size=?,
-    ~wordSpacing: size=?,
-    ~kerning: size=?,
-    ~fontFeatureSettings: string=?,
-    ~fontVariantLigatures: fontVariantLigatures=?,
-    ~fontVariationSettings: string=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "TSpan"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    ...fontProps,
+    dx?: string,
+    dy?: string,
+    rotate?: string,
+    inlineSize?: size,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "TSpan"
 }
 
 module Use = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~xlinkHref: string=?,
-    ~href: string=?,
-    ~width: size=?,
-    ~height: size=?,
-    ~opacity: opacity=?,
-    ~children: React.element=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Use"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    xlinkHref?: string,
+    href?: string,
+    width?: size,
+    height?: size,
+    opacity?: opacity,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Use"
 }
 
 module G = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~opacity: opacity=?,
-    ~children: React.element=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "G"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    opacity?: opacity,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "G"
 }
 
 module Symbol = {
@@ -766,49 +397,20 @@ module Defs = {
 }
 
 module Image = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~xlinkHref: string=?,
-    ~href: string=?,
-    ~width: size=?,
-    ~height: size=?,
-    ~preserveAspectRatio: string=?,
-    ~opacity: opacity=?,
-    ~children: React.element=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Image"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    xlinkHref?: string,
+    href?: string,
+    width?: size,
+    height?: size,
+    preserveAspectRatio?: string,
+    opacity?: opacity,
+    children?: React.element,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Image"
 }
 
 module ClipPath = {
@@ -859,47 +461,18 @@ module RadialGradient = {
 }
 
 module Mask = {
-  @react.component @module("react-native-svg")
-  external make: (
-    ~width: size=?,
-    ~height: size=?,
-    ~maskTransform: (float, float, float, float, float, float)=?,
-    ~maskUnits: maskUnits=?,
-    ~maskContentUnits: maskContentUnits=?,
-    // Commons Props
-    ~id: string=?,
-    ~fill: Color.t=?,
-    ~fillOpacity: opacity=?,
-    ~fillRule: fillRule=?,
-    ~stroke: Color.t=?,
-    ~strokeWidth: size=?,
-    ~strokeOpacity: opacity=?,
-    ~strokeDasharray: array<size>=?,
-    ~strokeDashoffset: size=?,
-    ~strokeLinecap: strokeLinecap=?,
-    ~strokeLinejoin: strokeLinejoin=?,
-    ~strokeMiterlimit: size=?,
-    ~clipRule: clipRule=?,
-    ~clipPath: string=?,
-    ~transform: string=?,
-    ~vectorEffect: vectorEffect=?,
-    ~x: size=?,
-    ~y: size=?,
-    ~rotation: size=?,
-    ~scale: size=?,
-    ~origin: string=?,
-    ~originX: size=?,
-    ~originY: size=?,
-    // Responder Props
-    ~onPress: Event.pressEvent => unit=?,
-    ~onPressIn: Event.pressEvent => unit=?,
-    ~onPressOut: Event.pressEvent => unit=?,
-    ~onLongPress: Event.pressEvent => unit=?,
-    ~disabled: bool=?,
-    ~delayPressIn: int=?,
-    ~delayPressOut: int=?,
-    ~delayLongPress: int=?,
-  ) => React.element = "Mask"
+  type _props = {
+    ...commonProps,
+    ...responderProps,
+    width?: size,
+    height?: size,
+    maskTransform?: (float, float, float, float, float, float),
+    maskUnits?: maskUnits,
+    maskContentUnits?: maskContentUnits,
+  }
+
+  @react.component(: _props) @module("react-native-svg")
+  external make: _ => React.element = "Mask"
 }
 
 module Pattern = {
