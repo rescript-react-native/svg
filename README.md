@@ -72,7 +72,7 @@ Supported :
 - Marker
 - ForeignObject
 
-See [definition](.src/ReactNativeSvg.re) for more details.
+See [definition](./src/ReactNativeSvg.res) for more details.
 
 ---
 
