@@ -1,5 +1,9 @@
 # Changelog of `@rescript-react-native/svg`
 
+## 14.0.0 - 2024-04-08
+
+- rescript 11 and @rescript/react 12 [#16](https://github.com/rescript-react-native/svg/pull/16) by [@Freddy03h](https://github.com/Freddy03h)
+
 ## 13.0.1 - 2024-04-07
 
 - Add children prop to Pattern [a39ed57](https://github.com/rescript-react-native/svg/commit/a39ed57) by [@Freddy03h](https://github.com/Freddy03h)

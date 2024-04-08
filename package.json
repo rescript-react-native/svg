@@ -1,13 +1,13 @@
 {
   "name": "@rescript-react-native/svg",
   "description": "ReScript bindings for react-native-svg.",
-  "version": "13.0.1",
+  "version": "14.0.0",
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
     "@rescript/react": ">=0.12.0",
-    "react-native-svg": ">=13.0.0",
+    "react-native-svg": ">=14.0.0",
     "rescript-react-native": ">=0.71.0"
   },
   "repository": "https://github.com/rescript-react-native/svg.git",

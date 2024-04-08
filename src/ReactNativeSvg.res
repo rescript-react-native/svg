@@ -99,7 +99,7 @@ module SvgXml = {
 
 // https://github.com/react-native-community/react-native-svg#css-support
 module SvgCss = {
-  @react.component @module("react-native-svg")
+  @react.component @module("react-native-svg/css")
   external make: (
     ~xml: string,
     ~width: size=?,
